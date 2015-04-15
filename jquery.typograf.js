@@ -129,6 +129,9 @@
 						return "<!--";
 					})
 
+					// Apostrophe
+					.replace(/([a-zа-я0-9_]+)'([a-zа-я0-9_]+)/gi,  "$1`$2")
+
 					// Numerical interval
 					.replace(/(\d)( )?[-—]( )?(\d)/g, function(str, $1, $2, $3, $4){
 						if ($2 == " ") { caretPosition-- }
